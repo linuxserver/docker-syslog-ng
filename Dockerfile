@@ -1,4 +1,4 @@
-FROM lsiobase/alpine
+FROM ghcr.io/linuxserver/baseimage-alpine:3.13
 
 ARG BUILD_DATE
 ARG VERSION
