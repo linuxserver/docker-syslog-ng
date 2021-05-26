@@ -1,0 +1,48 @@
+---
+
+# project information
+project_name: syslog-ng
+project_url: "https://www.syslog-ng.com/products/open-source-log-management/"
+project_logo: "https://raw.githubusercontent.com/linuxserver/docker-templates/master/linuxserver.io/img/syslog-ng-logo.png"
+project_blurb: "[syslog-ng]({{ project_url }}) allows you to flexibly collect, parse, classify, rewrite and correlate logs from across your infrastructure and store or route them to log analysis tools."
+project_lsio_github_repo_url: "https://github.com/linuxserver/docker-{{ project_name }}"
+project_blurb_optional_extras_enabled: false
+
+# supported architectures
+available_architectures:
+  - { arch: "{{ arch_x86_64 }}", tag: "latest"}
+  - { arch: "{{ arch_arm64 }}", tag: "arm64v8-latest"}
+  - { arch: "{{ arch_armhf }}", tag: "arm32v7-latest"}
+
+# development version
+development_versions: false
+
+# container parameters
+common_param_env_vars_enabled: true
+param_container_name: "{{ project_name }}"
+param_usage_include_env: true
+param_env_vars:
+  - { env_var: "TZ", env_value: "Europe/London", desc: "Specify a timezone to use EG Europe/London." }
+param_usage_include_vols: true
+param_volumes:
+  - { vol_path: "/config", vol_host_path: "/path/to/config", desc: "Stores config and application files" }
+opt_param_usage_include_vols: true
+opt_param_volumes:  
+  - { vol_path: "/var/log", vol_host_path: "/path/to/log", desc: "Stores logs collected by the syslog-ng service" }
+param_usage_include_ports: true
+param_ports:
+  - { external_port: "514", internal_port: "5514", port_desc: "Syslog UDP" }
+  - { external_port: "601", internal_port: "6601", port_desc: "Syslog TCP" }
+  - { external_port: "6514", internal_port: "6514", port_desc: "Syslog TLS" }
+
+# application setup block
+app_setup_block_enabled: true
+app_setup_block: |
+  Edit `/config/syslog-ng.conf` to configure your logging sources and destinations. Note: As the application does not run as root you cannot listen on ports < 1024.
+
+  More info at [syslog-ng](https://www.syslog-ng.com/technical-documents/list/syslog-ng-open-source-edition).
+
+
+# changelog
+changelogs:
+  - { date: "26.05.21:", desc: "Initial release." }

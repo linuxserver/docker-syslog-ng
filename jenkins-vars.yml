@@ -1,0 +1,22 @@
+---
+
+# jenkins variables
+project_name: docker-syslog-ng
+external_type: alpine_repo
+release_type: stable
+release_tag: latest
+ls_branch: main
+repo_vars:
+  - BUILD_VERSION_ARG = 'SYSLOG_NG_VERSION'
+  - LS_USER = 'linuxserver'
+  - LS_REPO = 'docker-syslog-ng'
+  - CONTAINER_NAME = 'syslog-ng'
+  - DOCKERHUB_IMAGE = 'linuxserver/syslog-ng'
+  - DEV_DOCKERHUB_IMAGE = 'lsiodev/syslog-ng'
+  - PR_DOCKERHUB_IMAGE = 'lspipepr/syslog-ng'
+  - DIST_IMAGE = 'alpine'
+  - DIST_TAG = '3.13'
+  - DIST_REPO = 'http://dl-cdn.alpinelinux.org/alpine/v3.13/main/'
+  - DIST_REPO_PACKAGES = 'syslog-ng'
+  - MULTIARCH = 'true'
+  - CI = 'false'
