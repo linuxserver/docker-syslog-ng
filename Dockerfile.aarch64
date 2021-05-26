@@ -8,8 +8,12 @@ LABEL maintainer="TheSpad"
 
 RUN \
   echo "**** install packages ****" && \
+  if [ -z ${SYSLOG_NG_VERSION+x} ]; then \
+    SYSLOG_NG_VERSION=$(curl -sL "http://dl-cdn.alpinelinux.org/alpine/v3.13/main/x86_64/APKINDEX.tar.gz" | tar -xz -C /tmp \
+    && awk '/^P:syslog-ng$/,/V:/' /tmp/APKINDEX | sed -n 2p | sed 's/^V://'); \
+  fi && \
   apk add -U --upgrade --no-cache  \
-    syslog-ng \
+    syslog-ng==${SYSLOG_NG_VERSION} \
     syslog-ng-add-contextual-data \
     syslog-ng-amqp \
     syslog-ng-graphite \
@@ -23,7 +27,9 @@ RUN \
     syslog-ng-stomp \
     syslog-ng-tags-parser \
     syslog-ng-xml \
-    py3-syslog-ng
+    py3-syslog-ng && \
+  rm -rf \
+    /tmp/*
 
 COPY root/ /
 
