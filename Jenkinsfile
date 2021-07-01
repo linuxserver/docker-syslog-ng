@@ -28,7 +28,8 @@ pipeline {
     DIST_REPO = 'http://dl-cdn.alpinelinux.org/alpine/v3.14/main/'
     DIST_REPO_PACKAGES = 'syslog-ng'
     MULTIARCH = 'true'
-    CI = 'false'
+    CI='true'
+    CI_WEB='false'
   }
   stages {
     // Setup all the basic environment variables needed for the build
