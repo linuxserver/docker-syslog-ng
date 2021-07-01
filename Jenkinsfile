@@ -24,11 +24,18 @@ pipeline {
     DEV_DOCKERHUB_IMAGE = 'lsiodev/syslog-ng'
     PR_DOCKERHUB_IMAGE = 'lspipepr/syslog-ng'
     DIST_IMAGE = 'alpine'
-    DIST_TAG = '3.13'
-    DIST_REPO = 'http://dl-cdn.alpinelinux.org/alpine/v3.13/main/'
+    DIST_TAG = '3.14'
+    DIST_REPO = 'http://dl-cdn.alpinelinux.org/alpine/v3.14/main/'
     DIST_REPO_PACKAGES = 'syslog-ng'
     MULTIARCH = 'true'
-    CI = 'false'
+    CI='true'
+    CI_WEB='false'
+    CI_PORT='80'
+    CI_SSL='false'
+    CI_DELAY='120'
+    CI_DOCKERENV='TZ=US/Pacific'
+    CI_AUTH=''
+    CI_WEBPATH=''
   }
   stages {
     // Setup all the basic environment variables needed for the build
