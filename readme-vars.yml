@@ -31,9 +31,9 @@ opt_param_volumes:
   - { vol_path: "/var/log", vol_host_path: "/path/to/log", desc: "Stores logs collected by the syslog-ng service" }
 param_usage_include_ports: true
 param_ports:
-  - { external_port: "514", internal_port: "5514", port_desc: "Syslog UDP" }
-  - { external_port: "601", internal_port: "6601", port_desc: "Syslog TCP" }
-  - { external_port: "6514", internal_port: "6514", port_desc: "Syslog TLS" }
+  - { external_port: "514", internal_port: "5514/udp", port_desc: "Syslog UDP" }
+  - { external_port: "601", internal_port: "6601/tcp", port_desc: "Syslog TCP" }
+  - { external_port: "6514", internal_port: "6514/tcp", port_desc: "Syslog TLS" }
 
 # application setup block
 app_setup_block_enabled: true
