@@ -63,7 +63,7 @@ syslog-ng-stardate-3.30.1-r1
 syslog-ng-stomp-3.30.1-r1
 syslog-ng-tags-parser-3.30.1-r1
 syslog-ng-xml-3.30.1-r1
-tzdata-2021a-r0
+tzdata-2021b-r0
 utmps-0.1.0.2-r0
 xz-5.2.5-r0
 xz-libs-5.2.5-r0
