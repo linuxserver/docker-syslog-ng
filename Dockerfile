@@ -1,4 +1,4 @@
-FROM ghcr.io/linuxserver/baseimage-alpine:3.14
+FROM ghcr.io/linuxserver/baseimage-alpine:3.15
 
 ARG BUILD_DATE
 ARG VERSION
@@ -11,7 +11,7 @@ RUN \
   apk add -U --upgrade --no-cache  \
     curl && \
   if [ -z ${SYSLOG_NG_VERSION+x} ]; then \
-    SYSLOG_NG_VERSION=$(curl -sL "http://dl-cdn.alpinelinux.org/alpine/v3.14/main/x86_64/APKINDEX.tar.gz" | tar -xz -C /tmp \
+    SYSLOG_NG_VERSION=$(curl -sL "http://dl-cdn.alpinelinux.org/alpine/v3.15/main/x86_64/APKINDEX.tar.gz" | tar -xz -C /tmp \
     && awk '/^P:syslog-ng$/,/V:/' /tmp/APKINDEX | sed -n 2p | sed 's/^V://'); \
   fi && \
   apk add -U --upgrade --no-cache  \
