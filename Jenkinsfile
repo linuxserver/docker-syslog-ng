@@ -25,7 +25,7 @@ pipeline {
     DEV_DOCKERHUB_IMAGE = 'lsiodev/syslog-ng'
     PR_DOCKERHUB_IMAGE = 'lspipepr/syslog-ng'
     DIST_IMAGE = 'alpine'
-    DIST_TAG = '3.14'
+    DIST_TAG = '3.15'
     DIST_REPO = 'http://dl-cdn.alpinelinux.org/alpine/v3.15/main/'
     DIST_REPO_PACKAGES = 'syslog-ng'
     MULTIARCH = 'true'
