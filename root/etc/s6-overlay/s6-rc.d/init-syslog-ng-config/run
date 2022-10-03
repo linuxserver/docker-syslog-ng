@@ -1,0 +1,31 @@
+#!/usr/bin/with-contenv bash
+
+#Copy defaults
+if [[ ! -f "/config/syslog-ng.conf" ]]; then
+    cp -a /defaults/syslog-ng.conf /config/syslog-ng.conf
+fi
+
+if [[ -f "/config/syslog-ng.conf" ]] && [[ $(grep "@version: 3.29" "/config/syslog-ng.conf") ]]; then
+    SYSLOG_VERSION=$(syslog-ng --version | grep "Config version" | awk -F ':' '{print $2}' | tr -d '[:space:]')
+cat <<-EOF
+********************************************************
+********************************************************
+*                                                      *
+*                         !!!!                         *
+*    WARNING: Configuration file format is too old,    *
+*     syslog-ng is running in compatibility mode.      *
+*                                                      *
+*   To upgrade the configuration, please review any    *
+*    warnings about incompatible changes in the log.   *
+*                                                      *
+*   Once completed change the @version header at the   * 
+*       top of the configuration file to "${SYSLOG_VERSION}"        *
+*                                                      *
+*                                                      *
+********************************************************
+********************************************************
+EOF
+fi
+
+chown -R abc:abc \
+    /config

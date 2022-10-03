@@ -1,0 +1,4 @@
+#!/usr/bin/with-contenv bash
+
+exec \
+    s6-setuidgid abc s6-log n30 s10000000 S30000000 T !"gzip -nq9" /config/log/
