@@ -1,4 +1,6 @@
-FROM ghcr.io/linuxserver/baseimage-alpine:arm32v7-3.16
+# syntax=docker/dockerfile:1
+
+FROM ghcr.io/linuxserver/baseimage-alpine:arm32v7-3.17
 
 ARG BUILD_DATE
 ARG VERSION
@@ -8,13 +10,12 @@ LABEL maintainer="TheSpad"
 
 RUN \
   echo "**** install packages ****" && \
-  apk add -U --upgrade --no-cache  \
-    curl && \  
   if [ -z ${SYSLOG_NG_VERSION+x} ]; then \
-    SYSLOG_NG_VERSION=$(curl -sL "http://dl-cdn.alpinelinux.org/alpine/v3.16/main/armhf/APKINDEX.tar.gz" | tar -xz -C /tmp \
+    SYSLOG_NG_VERSION=$(curl -sL "http://dl-cdn.alpinelinux.org/alpine/v3.17/main/armhf/APKINDEX.tar.gz" | tar -xz -C /tmp \
     && awk '/^P:syslog-ng$/,/V:/' /tmp/APKINDEX | sed -n 2p | sed 's/^V://'); \
   fi && \  
-  apk add -U --upgrade --no-cache  \
+  apk add -U --upgrade --no-cache \
+    libbdi-drivers \
     syslog-ng==${SYSLOG_NG_VERSION} \
     syslog-ng-add-contextual-data \
     syslog-ng-amqp \
