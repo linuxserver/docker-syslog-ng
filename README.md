@@ -234,6 +234,7 @@ Once registered you can define the dockerfile to use with `-f Dockerfile.aarch64
 
 ## Versions
 
+* **30.12.22:** - Rebase to Alpine 3.17, add libdbi-drivers for SQL support.
 * **01.10.22:** - Rebase to Alpine 3.16, migrate to s6v3.
 * **18.12.21:** - Rebase to Alpine 3.15.
 * **01.07.21:** - Rebase to Alpine 3.14.
