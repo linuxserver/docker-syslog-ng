@@ -30,8 +30,8 @@ RUN \
     syslog-ng-stomp \
     syslog-ng-tags-parser \
     syslog-ng-xml \
-    py3-syslog-ng \
-    paho-mqtt-c && \
+    paho-mqtt-c \
+    py3-syslog-ng && \
   rm -rf \
     /tmp/*
 
