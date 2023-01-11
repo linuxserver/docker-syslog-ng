@@ -47,6 +47,7 @@ app_setup_block: |
 
 # changelog
 changelogs:
+  - { date: "10.01.23:", desc: "Add paho-mqtt-c library as required by the syslog-ng documentation" }
   - { date: "30.12.22:", desc: "Rebase to Alpine 3.17, add libdbi-drivers for SQL support." }
   - { date: "01.10.22:", desc: "Rebase to Alpine 3.16, migrate to s6v3." }
   - { date: "18.12.21:", desc: "Rebase to Alpine 3.15." }

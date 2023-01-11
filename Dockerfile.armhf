@@ -16,6 +16,8 @@ RUN \
   fi && \  
   apk add -U --upgrade --no-cache \
     libdbi-drivers \
+    paho-mqtt-c \
+    py3-syslog-ng \
     syslog-ng==${SYSLOG_NG_VERSION} \
     syslog-ng-add-contextual-data \
     syslog-ng-amqp \
@@ -29,8 +31,7 @@ RUN \
     syslog-ng-stardate \
     syslog-ng-stomp \
     syslog-ng-tags-parser \
-    syslog-ng-xml \
-    py3-syslog-ng && \
+    syslog-ng-xml && \
   rm -rf \
     /tmp/*
 
