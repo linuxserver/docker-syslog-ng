@@ -56,7 +56,7 @@ The architectures supported by this image are:
 | :----: | :----: | ---- |
 | x86-64 | ✅ | amd64-\<version tag\> |
 | arm64 | ✅ | arm64v8-\<version tag\> |
-| armhf| ✅ | arm32v7-\<version tag\> |
+| armhf | ✅ | arm32v7-\<version tag\> |
 
 ## Application Setup
 
@@ -82,7 +82,7 @@ services:
     environment:
       - PUID=1000
       - PGID=1000
-      - TZ=Europe/London
+      - TZ=Etc/UTC
     volumes:
       - /path/to/config:/config
       - /path/to/log:/var/log #optional
@@ -100,7 +100,7 @@ docker run -d \
   --name=syslog-ng \
   -e PUID=1000 \
   -e PGID=1000 \
-  -e TZ=Europe/London \
+  -e TZ=Etc/UTC \
   -p 514:5514/udp \
   -p 601:6601/tcp \
   -p 6514:6514/tcp \
@@ -108,6 +108,7 @@ docker run -d \
   -v /path/to/log:/var/log `#optional` \
   --restart unless-stopped \
   lscr.io/linuxserver/syslog-ng:latest
+
 ```
 
 ## Parameters
@@ -121,7 +122,7 @@ Container images are configured using parameters passed at runtime (such as thos
 | `-p 6514/tcp` | Syslog TLS |
 | `-e PUID=1000` | for UserID - see below for explanation |
 | `-e PGID=1000` | for GroupID - see below for explanation |
-| `-e TZ=Europe/London` | Specify a timezone to use EG Europe/London. |
+| `-e TZ=Etc/UTC` | specify a timezone to use, see this [list](https://en.wikipedia.org/wiki/List_of_tz_database_time_zones#List). |
 | `-v /config` | Stores config and application files |
 | `-v /var/log` | Stores logs collected by the syslog-ng service |
 
