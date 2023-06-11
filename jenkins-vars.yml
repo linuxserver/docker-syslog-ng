@@ -6,6 +6,7 @@ external_type: alpine_repo
 release_type: stable
 release_tag: latest
 ls_branch: main
+build_armhf: false
 repo_vars:
   - BUILD_VERSION_ARG = 'SYSLOG_NG_VERSION'
   - LS_USER = 'linuxserver'
@@ -15,7 +16,7 @@ repo_vars:
   - DEV_DOCKERHUB_IMAGE = 'lsiodev/syslog-ng'
   - PR_DOCKERHUB_IMAGE = 'lspipepr/syslog-ng'
   - DIST_IMAGE = 'alpine'
-  - DIST_TAG = '3.17'
+  - DIST_TAG = '3.18'
   - DIST_REPO = 'http://dl-cdn.alpinelinux.org/alpine/v3.17/main/'
   - DIST_REPO_PACKAGES = 'syslog-ng'
   - MULTIARCH = 'true'
