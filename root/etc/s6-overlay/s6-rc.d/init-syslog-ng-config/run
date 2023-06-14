@@ -6,8 +6,11 @@ if [[ ! -f "/config/syslog-ng.conf" ]]; then
     cp -a /defaults/syslog-ng.conf /config/syslog-ng.conf
 fi
 
-if [[ -f "/config/syslog-ng.conf" ]] && [[ $(grep "@version: 3.29" "/config/syslog-ng.conf") ]]; then
-    SYSLOG_VERSION=$(syslog-ng --version | grep "Config version" | awk -F ':' '{print $2}' | tr -d '[:space:]')
+CONF_VERSION=$(grep -oP "@version: \K(\d+\.\d+)" "/config/syslog-ng.conf")
+SYSLOG_VERSION=$(syslog-ng --version | grep "Config version" | awk -F ':' '{print $2}' | tr -d '[:space:]')
+
+if [[ -f "/config/syslog-ng.conf" ]] && (( $(bc -l <<< "${CONF_VERSION} < ${SYSLOG_VERSION}") )); then
+
 cat <<-EOF
 ********************************************************
 ********************************************************
