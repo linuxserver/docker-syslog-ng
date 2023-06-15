@@ -15,6 +15,7 @@ coreutils                      9.3-r1                  apk
 curl                           8.1.2-r0                apk     
 gdbm                           1.23-r1                 apk     
 glib                           2.76.3-r0               apk     
+grep                           3.10-r1                 apk     
 hiredis                        1.1.0-r2                apk     
 ivykis                         0.42.4-r4               apk     
 jq                             1.6-r3                  apk     
