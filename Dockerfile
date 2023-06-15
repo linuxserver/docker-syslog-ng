@@ -15,6 +15,7 @@ RUN \
     && awk '/^P:syslog-ng$/,/V:/' /tmp/APKINDEX | sed -n 2p | sed 's/^V://'); \
   fi && \
   apk add -U --upgrade --no-cache \
+    grep \
     libdbi-drivers \
     paho-mqtt-c \
     py3-syslog-ng \
