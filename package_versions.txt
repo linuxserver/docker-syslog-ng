@@ -11,13 +11,13 @@ busybox-binsh                  1.36.1-r5               apk
 ca-certificates                20230506-r0             apk     
 ca-certificates-bundle         20230506-r0             apk     
 coreutils                      9.3-r1                  apk     
-curl                           8.4.0-r0                apk     
+curl                           8.5.0-r0                apk     
 gdbm                           1.23-r1                 apk     
 glib                           2.76.4-r0               apk     
 grep                           3.10-r1                 apk     
 hiredis                        1.1.0-r2                apk     
 ivykis                         0.42.4-r4               apk     
-jq                             1.6-r3                  apk     
+jq                             1.6-r4                  apk     
 json-c                         0.16-r3                 apk     
 libacl                         2.3.1-r3                apk     
 libattr                        2.5.1-r4                apk     
@@ -26,7 +26,7 @@ libbsd                         0.11.7-r1               apk
 libbz2                         1.0.8-r5                apk     
 libc-utils                     0.7.2-r5                apk     
 libcrypto3                     3.1.4-r1                apk     
-libcurl                        8.4.0-r0                apk     
+libcurl                        8.5.0-r0                apk     
 libdbi                         0.9.0-r4                apk     
 libdbi-drivers                 0.9.0-r2                apk     
 libexpat                       2.5.0-r1                apk     
