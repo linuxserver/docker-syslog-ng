@@ -84,7 +84,7 @@ syslog-ng-stomp                4.1.1-r2                apk
 syslog-ng-tags-parser          4.1.1-r2                apk     
 syslog-ng-xml                  4.1.1-r2                apk     
 syslogng                       1.0.1                   python  
-tzdata                         2023c-r1                apk     
+tzdata                         2023d-r0                apk     
 utmps-libs                     0.1.2.1-r1              apk     
 xz-libs                        5.4.3-r0                apk     
 zlib                           1.2.13-r1               apk     
