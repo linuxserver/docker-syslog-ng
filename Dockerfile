@@ -1,17 +1,17 @@
 # syntax=docker/dockerfile:1
 
-FROM ghcr.io/linuxserver/baseimage-alpine:3.18
+FROM ghcr.io/linuxserver/baseimage-alpine:3.19
 
 ARG BUILD_DATE
 ARG VERSION
 ARG SYSLOG_NG_VERSION
 LABEL build_version="Linuxserver.io version:- ${VERSION} Build-date:- ${BUILD_DATE}"
-LABEL maintainer="TheSpad"
+LABEL maintainer="thespad"
 
 RUN \
   echo "**** install packages ****" && \
   if [ -z ${SYSLOG_NG_VERSION+x} ]; then \
-    SYSLOG_NG_VERSION=$(curl -sL "http://dl-cdn.alpinelinux.org/alpine/v3.18/main/x86_64/APKINDEX.tar.gz" | tar -xz -C /tmp \
+    SYSLOG_NG_VERSION=$(curl -sL "http://dl-cdn.alpinelinux.org/alpine/v3.19/main/x86_64/APKINDEX.tar.gz" | tar -xz -C /tmp \
     && awk '/^P:syslog-ng$/,/V:/' /tmp/APKINDEX | sed -n 2p | sed 's/^V://'); \
   fi && \
   apk add -U --upgrade --no-cache \
@@ -23,7 +23,7 @@ RUN \
     syslog-ng-add-contextual-data \
     syslog-ng-amqp \
     syslog-ng-graphite \
-    syslog-ng-http \ 
+    syslog-ng-http \
     syslog-ng-json \
     syslog-ng-map-value-pairs \
     syslog-ng-redis \
