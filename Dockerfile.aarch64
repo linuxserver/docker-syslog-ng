@@ -18,7 +18,6 @@ RUN \
     grep \
     libdbi-drivers \
     paho-mqtt-c \
-    py3-syslog-ng \
     syslog-ng==${SYSLOG_NG_VERSION} \
     syslog-ng-add-contextual-data \
     syslog-ng-amqp \
@@ -26,6 +25,7 @@ RUN \
     syslog-ng-http \
     syslog-ng-json \
     syslog-ng-map-value-pairs \
+    syslog-ng-python \
     syslog-ng-redis \
     syslog-ng-scl \
     syslog-ng-sql \
