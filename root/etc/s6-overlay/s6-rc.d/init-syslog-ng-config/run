@@ -2,12 +2,14 @@
 # shellcheck shell=bash
 
 #Copy defaults
+SYSLOG_VERSION=$(syslog-ng --version 2>/dev/null | grep "Config version" | awk -F ':' '{print $2}' | tr -d '[:space:]')
+
 if [[ ! -f "/config/syslog-ng.conf" ]]; then
     cp -a /defaults/syslog-ng.conf /config/syslog-ng.conf
+    sed -i "s/|VERSION|/${SYSLOG_VERSION}/" /config/syslog-ng.conf
 fi
 
 CONF_VERSION=$(grep -oP "@version: \K(\d+\.\d+)" "/config/syslog-ng.conf")
-SYSLOG_VERSION=$(syslog-ng --version | grep "Config version" | awk -F ':' '{print $2}' | tr -d '[:space:]')
 
 if [[ -f "/config/syslog-ng.conf" ]] && (( $(bc -l <<< "${CONF_VERSION} < ${SYSLOG_VERSION}") )); then
 cat <<-EOF
@@ -21,7 +23,7 @@ cat <<-EOF
 *   To upgrade the configuration, please review any    *
 *    warnings about incompatible changes in the log.   *
 *                                                      *
-*   Once completed change the @version header at the   * 
+*   Once completed change the @version header at the   *
 *       top of the configuration file to "${SYSLOG_VERSION}"        *
 *                                                      *
 *                                                      *
