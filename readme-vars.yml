@@ -43,6 +43,7 @@ app_setup_block: |
 
 # changelog
 changelogs:
+  - { date: "24.05.24:", desc: "Rebase to Alpine 3.20." }
   - { date: "31.01.24:", desc: "Rebase to Alpine 3.19." }
   - { date: "11.06.23:", desc: "Rebase to Alpine 3.18, deprecate armhf." }
   - { date: "10.01.23:", desc: "Add paho-mqtt-c library as required by the syslog-ng documentation" }
