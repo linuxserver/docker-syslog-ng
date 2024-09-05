@@ -16,10 +16,10 @@ coreutils                      9.5-r1                 apk
 coreutils-env                  9.5-r1                 apk       
 coreutils-fmt                  9.5-r1                 apk       
 coreutils-sha512sum            9.5-r1                 apk       
-curl                           8.9.0-r0               apk       
+curl                           8.9.1-r1               apk       
 findutils                      4.9.0-r5               apk       
 gdbm                           1.23-r1                apk       
-glib                           2.80.2-r0              apk       
+glib                           2.80.4-r0              apk       
 grep                           3.11-r0                apk       
 hiredis                        1.2.0-r0               apk       
 ivykis                         0.43-r0                apk       
@@ -30,12 +30,12 @@ libattr                        2.5.2-r0               apk
 libblkid                       2.40.1-r1              apk       
 libbsd                         0.12.2-r0              apk       
 libbz2                         1.0.8-r6               apk       
-libcrypto3                     3.3.1-r3               apk       
-libcurl                        8.9.0-r0               apk       
+libcrypto3                     3.3.2-r0               apk       
+libcurl                        8.9.1-r1               apk       
 libdbi                         0.9.0-r4               apk       
 libdbi-drivers                 0.9.0-r2               apk       
 libeconf                       0.6.3-r0               apk       
-libexpat                       2.6.2-r0               apk       
+libexpat                       2.6.3-r0               apk       
 libffi                         3.4.6-r0               apk       
 libgcc                         13.2.1_git20240309-r0  apk       
 libidn2                        2.3.7-r0               apk       
@@ -47,7 +47,7 @@ libpanelw                      6.4_p20240420-r0       apk
 libpq                          16.3-r0                apk       
 libproc2                       4.0.4-r0               apk       
 libpsl                         0.21.5-r1              apk       
-libssl3                        3.3.1-r3               apk       
+libssl3                        3.3.2-r0               apk       
 libstdc++                      13.2.1_git20240309-r0  apk       
 libunistring                   1.2-r0                 apk       
 linux-pam                      1.6.0-r0               apk       
