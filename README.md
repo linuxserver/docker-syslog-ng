@@ -86,6 +86,7 @@ services:
       - PUID=1000
       - PGID=1000
       - TZ=Etc/UTC
+      - LOG_TO_STDOUT= #optional
     volumes:
       - /path/to/syslog-ng/config:/config
       - /path/to/log:/var/log #optional
@@ -104,6 +105,7 @@ docker run -d \
   -e PUID=1000 \
   -e PGID=1000 \
   -e TZ=Etc/UTC \
+  -e LOG_TO_STDOUT= `#optional` \
   -p 514:5514/udp \
   -p 601:6601/tcp \
   -p 6514:6514/tcp \
@@ -125,6 +127,7 @@ Containers are configured using parameters passed at runtime (such as those abov
 | `-e PUID=1000` | for UserID - see below for explanation |
 | `-e PGID=1000` | for GroupID - see below for explanation |
 | `-e TZ=Etc/UTC` | specify a timezone to use, see this [list](https://en.wikipedia.org/wiki/List_of_tz_database_time_zones#List). |
+| `-e LOG_TO_STDOUT=` | If set to `true` container will log to stdout, otherwise will log to `/config/log/`. |
 | `-v /config` | Stores config and application files |
 | `-v /var/log` | Stores logs collected by the syslog-ng service |
 | `--read-only=true` | Run container with a read-only filesystem. Please [read the docs](https://docs.linuxserver.io/misc/read-only/). |
@@ -290,6 +293,7 @@ Once registered you can define the dockerfile to use with `-f Dockerfile.aarch64
 
 ## Versions
 
+* **24.09.24:** - Add opt to log to stdout.
 * **24.05.24:** - Rebase to Alpine 3.20.
 * **31.01.24:** - Rebase to Alpine 3.19.
 * **11.06.23:** - Rebase to Alpine 3.18, deprecate armhf.
