@@ -19,9 +19,12 @@ development_versions: false
 # container parameters
 common_param_env_vars_enabled: true
 param_container_name: "{{ project_name }}"
+opt_param_usage_include_env: true
+opt_param_env_vars:
+  - { env_var: "LOG_TO_STDOUT", env_value: "", desc: "If set to `true` container will log to stdout, otherwise will log to `/config/log/`." }
 param_usage_include_vols: true
 param_volumes:
-  - { vol_path: "/config", vol_host_path: "/path/to/syslog-ng/config", desc: "Stores config and application files" }
+  - { vol_path: "/config", vol_host_path: "/path/to/{{ project_name }}/config", desc: "Stores config and application files" }
 opt_param_usage_include_vols: true
 opt_param_volumes:
   - { vol_path: "/var/log", vol_host_path: "/path/to/log", desc: "Stores logs collected by the syslog-ng service" }
@@ -44,6 +47,7 @@ app_setup_block: |
 
 # changelog
 changelogs:
+  - { date: "24.09.24:", desc: "Add opt to log to stdout." }
   - { date: "24.05.24:", desc: "Rebase to Alpine 3.20." }
   - { date: "31.01.24:", desc: "Rebase to Alpine 3.19." }
   - { date: "11.06.23:", desc: "Rebase to Alpine 3.18, deprecate armhf." }

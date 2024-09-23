@@ -1,5 +1,10 @@
 #!/usr/bin/with-contenv bash
 # shellcheck shell=bash
 
-exec \
-    s6-setuidgid abc s6-log n30 s10000000 S30000000 T !"gzip -nq9" /config/log/
+if [[ "${LOG_TO_STDOUT,,}" == "true" ]]; then
+    exec \
+        s6-setuidgid abc s6-log +.* 1
+else
+    exec \
+        s6-setuidgid abc s6-log n30 s10000000 S30000000 T !"gzip -nq9" /config/log/
+fi
