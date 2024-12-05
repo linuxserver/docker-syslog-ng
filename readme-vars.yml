@@ -7,35 +7,30 @@ project_logo: "https://raw.githubusercontent.com/linuxserver/docker-templates/ma
 project_blurb: "[syslog-ng]({{ project_url }}) allows you to flexibly collect, parse, classify, rewrite and correlate logs from across your infrastructure and store or route them to log analysis tools."
 project_lsio_github_repo_url: "https://github.com/linuxserver/docker-{{ project_name }}"
 project_blurb_optional_extras_enabled: false
-
 # supported architectures
 available_architectures:
-  - { arch: "{{ arch_x86_64 }}", tag: "latest"}
-  - { arch: "{{ arch_arm64 }}", tag: "arm64v8-latest"}
-
+  - {arch: "{{ arch_x86_64 }}", tag: "latest"}
+  - {arch: "{{ arch_arm64 }}", tag: "arm64v8-latest"}
 # development version
 development_versions: false
-
 # container parameters
 common_param_env_vars_enabled: true
 param_container_name: "{{ project_name }}"
 opt_param_usage_include_env: true
 opt_param_env_vars:
-  - { env_var: "LOG_TO_STDOUT", env_value: "", desc: "If set to `true` container will log to stdout, otherwise will log to `/config/log/`." }
+  - {env_var: "LOG_TO_STDOUT", env_value: "", desc: "If set to `true` container will log to stdout, otherwise will log to `/config/log/`."}
 param_usage_include_vols: true
 param_volumes:
-  - { vol_path: "/config", vol_host_path: "/path/to/{{ project_name }}/config", desc: "Stores config and application files" }
+  - {vol_path: "/config", vol_host_path: "/path/to/{{ project_name }}/config", desc: "Stores config and application files"}
 opt_param_usage_include_vols: true
 opt_param_volumes:
-  - { vol_path: "/var/log", vol_host_path: "/path/to/log", desc: "Stores logs collected by the syslog-ng service" }
+  - {vol_path: "/var/log", vol_host_path: "/path/to/log", desc: "Stores logs collected by the syslog-ng service"}
 param_usage_include_ports: true
 param_ports:
-  - { external_port: "514", internal_port: "5514/udp", port_desc: "Syslog UDP" }
-  - { external_port: "601", internal_port: "6601/tcp", port_desc: "Syslog TCP" }
-  - { external_port: "6514", internal_port: "6514/tcp", port_desc: "Syslog TLS" }
-
+  - {external_port: "514", internal_port: "5514/udp", port_desc: "Syslog UDP"}
+  - {external_port: "601", internal_port: "6601/tcp", port_desc: "Syslog TCP"}
+  - {external_port: "6514", internal_port: "6514/tcp", port_desc: "Syslog TLS"}
 readonly_supported: true
-
 # application setup block
 app_setup_block_enabled: true
 app_setup_block: |
@@ -44,16 +39,59 @@ app_setup_block: |
   The application pid, control file, etc. are all kept in /config so when using tools such as `syslog-ng-ctl` you need to specify the path e.g. `syslog-ng-ctl reload -c /config/syslog-ng.ctl`
 
   More info at [syslog-ng](https://www.syslog-ng.com/technical-documents/list/syslog-ng-open-source-edition).
-
+# init diagram
+init_diagram: |
+  "syslog-ng:latest": {
+    docker-mods
+    base {
+      fix-attr +\nlegacy cont-init
+    }
+    docker-mods -> base
+    legacy-services
+    custom services
+    init-services -> legacy-services
+    init-services -> custom services
+    custom services -> legacy-services
+    legacy-services -> ci-service-check
+    init-migrations -> init-adduser
+    init-os-end -> init-config
+    init-config -> init-config-end
+    init-syslog-ng-config -> init-config-end
+    init-os-end -> init-crontab-config
+    init-mods-end -> init-custom-files
+    base -> init-envfile
+    base -> init-migrations
+    base -> init-mods
+    init-config-end -> init-mods
+    init-mods -> init-mods-end
+    init-mods-package-install -> init-mods-end
+    init-mods -> init-mods-package-install
+    base -> init-os-end
+    init-adduser -> init-os-end
+    init-envfile -> init-os-end
+    init-migrations -> init-os-end
+    init-custom-files -> init-services
+    init-mods-end -> init-services
+    init-config -> init-syslog-ng-config
+    init-services -> log-syslog-ng
+    init-services -> svc-cron
+    svc-cron -> legacy-services
+    init-services -> svc-syslog-ng
+    svc-syslog-ng -> legacy-services
+  }
+  Base Images: {
+    "baseimage-alpine:3.20"
+  }
+  "syslog-ng:latest" <- Base Images
 # changelog
 changelogs:
-  - { date: "24.09.24:", desc: "Add opt to log to stdout." }
-  - { date: "24.05.24:", desc: "Rebase to Alpine 3.20." }
-  - { date: "31.01.24:", desc: "Rebase to Alpine 3.19." }
-  - { date: "11.06.23:", desc: "Rebase to Alpine 3.18, deprecate armhf." }
-  - { date: "10.01.23:", desc: "Add paho-mqtt-c library as required by the syslog-ng documentation" }
-  - { date: "30.12.22:", desc: "Rebase to Alpine 3.17, add libdbi-drivers for SQL support." }
-  - { date: "01.10.22:", desc: "Rebase to Alpine 3.16, migrate to s6v3." }
-  - { date: "18.12.21:", desc: "Rebase to Alpine 3.15." }
-  - { date: "01.07.21:", desc: "Rebase to Alpine 3.14." }
-  - { date: "26.05.21:", desc: "Initial release." }
+  - {date: "24.09.24:", desc: "Add opt to log to stdout."}
+  - {date: "24.05.24:", desc: "Rebase to Alpine 3.20."}
+  - {date: "31.01.24:", desc: "Rebase to Alpine 3.19."}
+  - {date: "11.06.23:", desc: "Rebase to Alpine 3.18, deprecate armhf."}
+  - {date: "10.01.23:", desc: "Add paho-mqtt-c library as required by the syslog-ng documentation"}
+  - {date: "30.12.22:", desc: "Rebase to Alpine 3.17, add libdbi-drivers for SQL support."}
+  - {date: "01.10.22:", desc: "Rebase to Alpine 3.16, migrate to s6v3."}
+  - {date: "18.12.21:", desc: "Rebase to Alpine 3.15."}
+  - {date: "01.07.21:", desc: "Rebase to Alpine 3.14."}
+  - {date: "26.05.21:", desc: "Initial release."}
