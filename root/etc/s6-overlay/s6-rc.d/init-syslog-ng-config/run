@@ -32,5 +32,7 @@ cat <<-EOF
 EOF
 fi
 
-lsiown -R abc:abc \
-    /config
+if [[ -z ${LSIO_NON_ROOT_USER} ]]; then
+    lsiown -R abc:abc \
+        /config
+fi

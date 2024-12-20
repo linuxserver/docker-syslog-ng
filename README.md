@@ -69,6 +69,10 @@ More info at [syslog-ng](https://www.syslog-ng.com/technical-documents/list/sysl
 
 This image can be run with a read-only container filesystem. For details please [read the docs](https://docs.linuxserver.io/misc/read-only/).
 
+## Non-Root Operation
+
+This image can be run with a non-root user. For details please [read the docs](https://docs.linuxserver.io/misc/non-root/).
+
 ## Usage
 
 To help you get started creating a container from this image you can either use docker-compose or the docker cli.
@@ -133,6 +137,7 @@ Containers are configured using parameters passed at runtime (such as those abov
 | `-v /config` | Stores config and application files |
 | `-v /var/log` | Stores logs collected by the syslog-ng service |
 | `--read-only=true` | Run container with a read-only filesystem. Please [read the docs](https://docs.linuxserver.io/misc/read-only/). |
+| `--user=1000:1000` | Run container with a non-root user. Please [read the docs](https://docs.linuxserver.io/misc/non-root/). |
 
 ## Environment variables from files (Docker secrets)
 
@@ -296,6 +301,7 @@ Once registered you can define the dockerfile to use with `-f Dockerfile.aarch64
 
 ## Versions
 
+* **20.12.24:** - Rebase to Alpine 3.21.
 * **24.09.24:** - Add opt to log to stdout.
 * **24.05.24:** - Rebase to Alpine 3.20.
 * **31.01.24:** - Rebase to Alpine 3.19.
