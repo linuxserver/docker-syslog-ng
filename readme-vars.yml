@@ -11,8 +11,6 @@ project_blurb_optional_extras_enabled: false
 available_architectures:
   - {arch: "{{ arch_x86_64 }}", tag: "latest"}
   - {arch: "{{ arch_arm64 }}", tag: "arm64v8-latest"}
-# development version
-development_versions: false
 # container parameters
 common_param_env_vars_enabled: true
 param_container_name: "{{ project_name }}"
@@ -31,6 +29,7 @@ param_ports:
   - {external_port: "601", internal_port: "6601/tcp", port_desc: "Syslog TCP"}
   - {external_port: "6514", internal_port: "6514/tcp", port_desc: "Syslog TLS"}
 readonly_supported: true
+nonroot_supported: true
 # application setup block
 app_setup_block_enabled: true
 app_setup_block: |
@@ -85,6 +84,7 @@ init_diagram: |
   "syslog-ng:latest" <- Base Images
 # changelog
 changelogs:
+  - {date: "20.12.24:", desc: "Rebase to Alpine 3.21."}
   - {date: "24.09.24:", desc: "Add opt to log to stdout."}
   - {date: "24.05.24:", desc: "Rebase to Alpine 3.20."}
   - {date: "31.01.24:", desc: "Rebase to Alpine 3.19."}

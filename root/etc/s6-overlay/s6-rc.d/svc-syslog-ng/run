@@ -1,5 +1,10 @@
 #!/usr/bin/with-contenv bash
 # shellcheck shell=bash
 
-exec 2>&1 \
-    s6-setuidgid abc /usr/sbin/syslog-ng -F -f /config/syslog-ng.conf --persist-file /config/syslog-ng.persist --pidfile=/config/syslog-ng.pid --control=/config/syslog-ng.ctl --stderr --no-caps
+if [[ -z ${LSIO_NON_ROOT_USER} ]]; then
+    exec 2>&1 \
+        s6-setuidgid abc /usr/sbin/syslog-ng -F -f /config/syslog-ng.conf --persist-file /config/syslog-ng.persist --pidfile=/config/syslog-ng.pid --control=/config/syslog-ng.ctl --stderr --no-caps
+else
+    exec 2>&1 \
+        /usr/sbin/syslog-ng -F -f /config/syslog-ng.conf --persist-file /config/syslog-ng.persist --pidfile=/config/syslog-ng.pid --control=/config/syslog-ng.ctl --stderr --no-caps
+fi
