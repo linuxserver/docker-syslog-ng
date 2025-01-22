@@ -6,6 +6,7 @@ project_url: "https://www.syslog-ng.com/products/open-source-log-management/"
 project_logo: "https://raw.githubusercontent.com/linuxserver/docker-templates/master/linuxserver.io/img/syslog-ng-logo.png"
 project_blurb: "[syslog-ng]({{ project_url }}) allows you to flexibly collect, parse, classify, rewrite and correlate logs from across your infrastructure and store or route them to log analysis tools."
 project_lsio_github_repo_url: "https://github.com/linuxserver/docker-{{ project_name }}"
+project_categories: "Monitoring"
 project_blurb_optional_extras_enabled: false
 # supported architectures
 available_architectures:
