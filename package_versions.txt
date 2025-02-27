@@ -20,7 +20,7 @@ coreutils-sha512sum            9.5-r2            apk
 curl                           8.12.1-r0         apk       
 findutils                      4.10.0-r0         apk       
 gdbm                           1.24-r0           apk       
-glib                           2.82.4-r0         apk       
+glib                           2.82.5-r0         apk       
 grep                           3.11-r0           apk       
 hiredis                        1.2.0-r0          apk       
 ivykis                         0.43.2-r0         apk       
@@ -44,7 +44,7 @@ libmd                          1.1.0-r0          apk
 libmount                       2.40.4-r0         apk       
 libncursesw                    6.5_p20241006-r3  apk       
 libpanelw                      6.5_p20241006-r3  apk       
-libpq                          17.2-r0           apk       
+libpq                          17.4-r0           apk       
 libproc2                       4.0.4-r2          apk       
 libpsl                         0.21.5-r3         apk       
 libssl3                        3.3.3-r0          apk       
