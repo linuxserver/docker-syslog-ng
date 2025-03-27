@@ -17,7 +17,7 @@ coreutils                      9.5-r2            apk
 coreutils-env                  9.5-r2            apk       
 coreutils-fmt                  9.5-r2            apk       
 coreutils-sha512sum            9.5-r2            apk       
-curl                           8.12.1-r0         apk       
+curl                           8.12.1-r1         apk       
 findutils                      4.10.0-r0         apk       
 gdbm                           1.24-r0           apk       
 glib                           2.82.5-r0         apk       
@@ -31,7 +31,7 @@ libblkid                       2.40.4-r0         apk
 libbsd                         0.12.2-r0         apk       
 libbz2                         1.0.8-r6          apk       
 libcrypto3                     3.3.3-r0          apk       
-libcurl                        8.12.1-r0         apk       
+libcurl                        8.12.1-r1         apk       
 libdbi                         0.9.0-r5          apk       
 libdbi-drivers                 0.9.0-r3          apk       
 libeconf                       0.6.3-r0          apk       
