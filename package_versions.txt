@@ -61,7 +61,7 @@ netcat-openbsd                 1.229.1-r0        apk
 nghttp2-libs                   1.65.0-r0         apk       
 oniguruma                      6.9.10-r0         apk       
 paho-mqtt-c                    1.3.13-r0         apk       
-pcre2                          10.43-r1          apk       
+pcre2                          10.46-r0          apk       
 procps-ng                      4.0.4-r3          apk       
 pyc                            3.12.12-r0        apk       
 python3                        3.12.12-r0        apk       
