@@ -83,6 +83,7 @@ init_diagram: |
   "syslog-ng:latest" <- Base Images
 # changelog
 changelogs:
+  - {date: "26.12.25:", desc: "Rebase to Alpine 3.23."}
   - {date: "05.07.25:", desc: "Rebase to Alpine 3.22."}
   - {date: "20.12.24:", desc: "Rebase to Alpine 3.21."}
   - {date: "24.09.24:", desc: "Add opt to log to stdout."}
