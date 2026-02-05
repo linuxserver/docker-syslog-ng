@@ -3,7 +3,7 @@ acl-libs                       2.3.2-r1          apk
 alpine-baselayout              3.7.1-r8          apk       
 alpine-baselayout-data         3.7.1-r8          apk       
 alpine-keys                    2.6-r0            apk       
-alpine-release                 3.23.2-r0         apk       
+alpine-release                 3.23.3-r0         apk       
 apk-tools                      3.0.3-r1          apk       
 bash                           5.3.3-r1          apk       
 brotli-libs                    1.2.0-r0          apk       
@@ -36,7 +36,7 @@ libcurl                        8.17.0-r1         apk
 libdbi                         0.9.0-r5          apk       
 libdbi-drivers                 0.9.0-r3          apk       
 libeconf                       0.8.3-r0          apk       
-libexpat                       2.7.3-r0          apk       
+libexpat                       2.7.4-r0          apk       
 libffi                         3.5.2-r0          apk       
 libgcc                         15.2.0-r2         apk       
 libidn2                        2.3.8-r0          apk       
