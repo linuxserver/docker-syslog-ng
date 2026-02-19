@@ -45,7 +45,7 @@ libmd                          1.1.0-r0          apk
 libmount                       2.41.2-r0         apk       
 libncursesw                    6.5_p20251123-r0  apk       
 libpanelw                      6.5_p20251123-r0  apk       
-libpq                          18.1-r0           apk       
+libpq                          18.2-r0           apk       
 libproc2                       4.0.5-r0          apk       
 libpsl                         0.21.5-r3         apk       
 libssl3                        3.5.5-r0          apk       
