@@ -45,7 +45,7 @@ libmd                          1.1.0-r0          apk
 libmount                       2.41.2-r0         apk       
 libncursesw                    6.5_p20251123-r0  apk       
 libpanelw                      6.5_p20251123-r0  apk       
-libpq                          18.2-r0           apk       
+libpq                          18.3-r0           apk       
 libproc2                       4.0.5-r0          apk       
 libpsl                         0.21.5-r3         apk       
 libssl3                        3.5.5-r0          apk       
@@ -91,8 +91,8 @@ syslog-ng-stomp                4.10.2-r1         apk
 syslog-ng-tags-parser          4.10.2-r1         apk       
 syslog-ng-xml                  4.10.2-r1         apk       
 syslogng                       1.0.1             python    
-tzdata                         2025c-r0          apk       
+tzdata                         2026a-r0          apk       
 utmps-libs                     0.1.3.1-r0        apk       
 xz-libs                        5.8.2-r0          apk       
-zlib                           1.3.1-r2          apk       
+zlib                           1.3.2-r0          apk       
 zstd-libs                      1.5.7-r2          apk       
