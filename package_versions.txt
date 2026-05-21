@@ -17,7 +17,7 @@ coreutils                      9.8-r1            apk
 coreutils-env                  9.8-r1            apk       
 coreutils-fmt                  9.8-r1            apk       
 coreutils-sha512sum            9.8-r1            apk       
-curl                           8.17.0-r1         apk       
+curl                           8.19.0-r0         apk       
 findutils                      4.10.0-r0         apk       
 gdbm                           1.26-r0           apk       
 glib                           2.86.3-r0         apk       
@@ -32,7 +32,7 @@ libblkid                       2.41.4-r0         apk
 libbsd                         0.12.2-r0         apk       
 libbz2                         1.0.8-r6          apk       
 libcrypto3                     3.5.6-r0          apk       
-libcurl                        8.17.0-r1         apk       
+libcurl                        8.19.0-r0         apk       
 libdbi                         0.9.0-r5          apk       
 libdbi-drivers                 0.9.0-r3          apk       
 libeconf                       0.8.3-r0          apk       
@@ -59,7 +59,6 @@ musl-utils                     1.2.5-r23         apk
 ncurses-terminfo-base          6.5_p20251123-r0  apk       
 netcat-openbsd                 1.234.1-r0        apk       
 nghttp2-libs                   1.69.0-r0         apk       
-nghttp3                        1.13.1-r0         apk       
 oniguruma                      6.9.10-r0         apk       
 paho-mqtt-c                    1.3.15-r0         apk       
 pcre2                          10.47-r0          apk       
