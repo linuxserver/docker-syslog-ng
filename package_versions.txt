@@ -93,5 +93,5 @@ syslogng                       1.0.1             python
 tzdata                         2026d-r0          apk       
 utmps-libs                     0.1.3.3-r0        apk       
 xz-libs                        5.8.4-r0          apk       
-zlib                           1.3.2-r0          apk       
+zlib                           1.3.2-r1          apk       
 zstd-libs                      1.5.7-r2          apk       
